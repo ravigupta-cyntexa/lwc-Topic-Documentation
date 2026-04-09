@@ -164,3 +164,33 @@ export default class DataTableComponent extends NavigationMixin(LightningElement
     }
 }
 ```
+
+## see the class from where data is comming
+getRecordforDataTable.cls
+```
+public with sharing class getRecordforDataTable {
+    public getRecordforDataTable() {
+
+    }
+    @AuraEnabled (cacheable=true)
+    public static list<Account> getRec(){
+        List<Account>accList=[select Id, Name,AccountNumber, NumberOfEmployees from Account];
+        return accList;
+    }
+}
+```
+
+## see the delete class of apex
+```
+public with sharing class deleterecord {
+    public deleterecord() {
+
+    }
+
+    @AuraEnabled
+    public static void deleteRec(ID i){
+        Account acc=[select ID, Name from Account where id=:i];
+        delete acc;
+    }
+}
+```
