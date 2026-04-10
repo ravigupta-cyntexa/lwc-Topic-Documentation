@@ -1,6 +1,10 @@
 ## HTML
 
 ```
+    <lightning-button label="Open Modal" onclick={openModal}></lightning-button>
+
+
+
  <template if:true={isModalOpen}>
         <section role="dialog" class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container">
