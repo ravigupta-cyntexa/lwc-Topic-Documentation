@@ -47,3 +47,28 @@ export default class LdsExample extends LightningElement {
     }
 }
 ```
+
+## LDS to update Records
+```
+import { updateRecord } from 'lightning/uiRecordApi';
+
+handleChange(event) {
+        this.value = event.detail.value;
+        if (this.selectedRowFouUpdate.length > 0) {
+            for (let i = 0; i < this.selectedRowFouUpdate.length; i++) {
+                let da = this.selectedRowFouUpdate[i];
+                let fields = {
+                    Id: da.Id,
+                    StageName: this.value,
+                }
+
+                updateRecord({ fields }).then(()=>{
+                    console.log("Record Updated Successful");
+                   return refreshApex(this.wiredData);
+
+                });
+            }
+
+        }
+    }
+```
