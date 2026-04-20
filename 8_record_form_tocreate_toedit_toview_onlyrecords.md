@@ -6,23 +6,36 @@
     </lightning-record-form>
 
 
+    <!-- ///read only  -->
+    <lightning-record-form record-id={recordId} object-api-name={objectApiName}  columns="2" layout-type="Full" mode="readonly">
+    </lightning-record-form>
+
+<!-- /// edit  -->
+    <lightning-record-form record-id={recordId} object-api-name={objectApiName} onsuccess={handleSuccess} columns="2" layout-type="Full" mode="edit">
+    </lightning-record-form>
+
+    <!-- // view -->
+
+     <lightning-record-form record-id={recordId} object-api-name={objectApiName}  columns="2" layout-type="Full" mode="view">
+    </lightning-record-form>
+
     <!-- /// record edit form  -->
-    <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId}>
+    <!-- <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId}>
         <lightning-input-field field-name={nameField}> </lightning-input-field>
         <lightning-input-field field-name={NOEField}> </lightning-input-field>
 
         <div class="slds-var-m-top_medium">
-            <lightning-button variant="brand" type="submit" label="Save">
+            <lightning-button variant="brand"  type="submit" label="Save">
             </lightning-button>
         </div>
-    </lightning-record-edit-form>
+    </lightning-record-edit-form> -->
 
-   <!-- record view only form  -->
-    <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+    <!-- record view only form  -->
+    <!-- <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
         <lightning-output-field field-name={nameField}> </lightning-output-field>
         <lightning-input-field field-name={NOEField}> </lightning-input-field>
 
-    </lightning-record-view-form>
+    </lightning-record-view-form> -->
 
 
 
